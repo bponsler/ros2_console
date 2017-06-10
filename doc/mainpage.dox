@@ -1,0 +1,6 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+The \b ros2_console package provides simple console logging facilities for ROS 2.
+*/
