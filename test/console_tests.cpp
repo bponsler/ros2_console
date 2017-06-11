@@ -5,6 +5,15 @@
 #include <gtest/gtest.h>
 
 
+TEST(TimeTestSuite, testRegularNoArgs)
+{
+  ROS_DEBUG("Empty format");
+  ROS_INFO("Empty format");
+  ROS_WARN("Empty format");
+  ROS_ERROR("Empty format");
+  ROS_FATAL("Empty format");
+}
+
 TEST(TimeTestSuite, testRegular)
 {
   ROS_DEBUG("Hey: %s %d", "there", 100);
@@ -13,7 +22,6 @@ TEST(TimeTestSuite, testRegular)
   ROS_ERROR("Hey: %s %d", "there", 100);
   ROS_FATAL("Hey: %s %d", "there", 100);
 }
-
 
 TEST(TimeTestSuite, testRegularNamed)
 {

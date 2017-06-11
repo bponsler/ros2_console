@@ -32,70 +32,70 @@ namespace ros2_console
 #define END_SUFFIX COLOR_NORMAL "\n"
 
 // Regular log macros
-#define ROS_DEBUG(format, ...) printf(DEBUG_PREFIX format END_SUFFIX, __VA_ARGS__);
-#define ROS_INFO(format, ...) printf(INFO_PREFIX format END_SUFFIX, __VA_ARGS__);
-#define ROS_WARN(format, ...) printf(WARN_PREFIX format END_SUFFIX, __VA_ARGS__);
-#define ROS_ERROR(format, ...) printf(ERROR_PREFIX format END_SUFFIX, __VA_ARGS__);
-#define ROS_FATAL(format, ...) printf(FATAL_PREFIX format END_SUFFIX, __VA_ARGS__);
+#define ROS_DEBUG(format, ...) printf(DEBUG_PREFIX format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_INFO(format, ...) printf(INFO_PREFIX format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_WARN(format, ...) printf(WARN_PREFIX format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_ERROR(format, ...) printf(ERROR_PREFIX format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_FATAL(format, ...) printf(FATAL_PREFIX format END_SUFFIX, ##__VA_ARGS__);
 
 // Named log macros
-#define ROS_DEBUG_NAMED(name, format, ...) printf(DEBUG_PREFIX "[" name "]: " format END_SUFFIX, __VA_ARGS__);
-#define ROS_INFO_NAMED(name, format, ...) printf(INFO_PREFIX "[" name "]: " format END_SUFFIX, __VA_ARGS__);
-#define ROS_WARN_NAMED(name, format, ...) printf(WARN_PREFIX "[" name "]: " format END_SUFFIX, __VA_ARGS__);
-#define ROS_ERROR_NAMED(name, format, ...) printf(ERROR_PREFIX "[" name "]: " format END_SUFFIX, __VA_ARGS__);
-#define ROS_FATAL_NAMED(name, format, ...) printf(FATAL_PREFIX "[" name "]: " format END_SUFFIX, __VA_ARGS__);
+#define ROS_DEBUG_NAMED(name, format, ...) printf(DEBUG_PREFIX "[" name "]: " format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_INFO_NAMED(name, format, ...) printf(INFO_PREFIX "[" name "]: " format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_WARN_NAMED(name, format, ...) printf(WARN_PREFIX "[" name "]: " format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_ERROR_NAMED(name, format, ...) printf(ERROR_PREFIX "[" name "]: " format END_SUFFIX, ##__VA_ARGS__);
+#define ROS_FATAL_NAMED(name, format, ...) printf(FATAL_PREFIX "[" name "]: " format END_SUFFIX, ##__VA_ARGS__);
 
 // Conditional log macros
 #define ROS_DEBUG_COND(cond, format, ...) \
-  if (cond) { ROS_DEBUG(format, __VA_ARGS__); }
+  if (cond) { ROS_DEBUG(format, ##__VA_ARGS__); }
 #define ROS_INFO_COND(cond, format, ...) \
-  if (cond) { ROS_INFO(format, __VA_ARGS__); }
+  if (cond) { ROS_INFO(format, ##__VA_ARGS__); }
 #define ROS_WARN_COND(cond, format, ...) \
-  if (cond) { ROS_WARN(format, __VA_ARGS__); }
+  if (cond) { ROS_WARN(format, ##__VA_ARGS__); }
 #define ROS_ERROR_COND(cond, format, ...) \
-  if (cond) { ROS_ERROR(format, __VA_ARGS__); }
+  if (cond) { ROS_ERROR(format, ##__VA_ARGS__); }
 #define ROS_FATAL_COND(cond, format, ...) \
-  if (cond) { ROS_FATAL(format, __VA_ARGS__); }
+  if (cond) { ROS_FATAL(format, ##__VA_ARGS__); }
 
 // Conditional and Named log macros
 #define ROS_DEBUG_COND_NAMED(cond, name, format, ...)		\
-  if (cond) { ROS_DEBUG_NAMED(name, format, __VA_ARGS__);}
+  if (cond) { ROS_DEBUG_NAMED(name, format, ##__VA_ARGS__);}
 #define ROS_INFO_COND_NAMED(cond, name, format, ...)		\
-  if (cond) { ROS_INFO_NAMED(name, format, __VA_ARGS__); }
+  if (cond) { ROS_INFO_NAMED(name, format, ##__VA_ARGS__); }
 #define ROS_WARN_COND_NAMED(cond, name, format, ...)		\
-  if (cond) { ROS_WARN_NAMED(name, format, __VA_ARGS__); }
+  if (cond) { ROS_WARN_NAMED(name, format, ##__VA_ARGS__); }
 #define ROS_ERROR_COND_NAMED(cond, name, format, ...)		\
-  if (cond) { ROS_ERROR_NAMED(name, format, __VA_ARGS__); }
+  if (cond) { ROS_ERROR_NAMED(name, format, ##__VA_ARGS__); }
 #define ROS_FATAL_COND_NAMED(cond, name, format, ...)		\
-  if (cond) { ROS_FATAL_NAMED(name, format, __VA_ARGS__); }
+  if (cond) { ROS_FATAL_NAMED(name, format, ##__VA_ARGS__); }
 
 // Throttle log macros
-#define ROS_DEBUG_THROTTLE(rate, format, ...) ROS_DEBUG(format, __VA_ARGS__);
-#define ROS_INFO_THROTTLE(rate, format, ...) ROS_INFO(format, __VA_ARGS__);
-#define ROS_WARN_THROTTLE(rate, format, ...) ROS_WARN(format, __VA_ARGS__);
-#define ROS_ERROR_THROTTLE(rate, format, ...) ROS_ERROR(format, __VA_ARGS__);
-#define ROS_FATAL_THROTTLE(rate, format, ...) ROS_FATAL(format, __VA_ARGS__);
+#define ROS_DEBUG_THROTTLE(rate, format, ...) ROS_DEBUG(format, ##__VA_ARGS__);
+#define ROS_INFO_THROTTLE(rate, format, ...) ROS_INFO(format, ##__VA_ARGS__);
+#define ROS_WARN_THROTTLE(rate, format, ...) ROS_WARN(format, ##__VA_ARGS__);
+#define ROS_ERROR_THROTTLE(rate, format, ...) ROS_ERROR(format, ##__VA_ARGS__);
+#define ROS_FATAL_THROTTLE(rate, format, ...) ROS_FATAL(format, ##__VA_ARGS__);
 
 // Delayed throttle log macros
-#define ROS_DEBUG_DELAYED_THROTTLE(rate, format, ...) ROS_DEBUG(format, __VA_ARGS__);
-#define ROS_INFO_DELAYED_THROTTLE(rate, format, ...) ROS_INFO(format, __VA_ARGS__);
-#define ROS_WARN_DELAYED_THROTTLE(rate, format, ...) ROS_WARN(format, __VA_ARGS__);
-#define ROS_ERROR_DELAYED_THROTTLE(rate, format, ...) ROS_ERROR(format, __VA_ARGS__);
-#define ROS_FATAL_DELAYED_THROTTLE(rate, format, ...) ROS_FATAL(format, __VA_ARGS__);
+#define ROS_DEBUG_DELAYED_THROTTLE(rate, format, ...) ROS_DEBUG(format, ##__VA_ARGS__);
+#define ROS_INFO_DELAYED_THROTTLE(rate, format, ...) ROS_INFO(format, ##__VA_ARGS__);
+#define ROS_WARN_DELAYED_THROTTLE(rate, format, ...) ROS_WARN(format, ##__VA_ARGS__);
+#define ROS_ERROR_DELAYED_THROTTLE(rate, format, ...) ROS_ERROR(format, ##__VA_ARGS__);
+#define ROS_FATAL_DELAYED_THROTTLE(rate, format, ...) ROS_FATAL(format, ##__VA_ARGS__);
 
 // Throttle named log macros
-#define ROS_DEBUG_THROTTLE_NAMED(rate, name, format, ...) ROS_DEBUG_NAMED(name, format, __VA_ARGS__);
-#define ROS_INFO_THROTTLE_NAMED(rate, name, format, ...) ROS_INFO_NAMED(name, format, __VA_ARGS__);
-#define ROS_WARN_THROTTLE_NAMED(rate, name, format, ...) ROS_WARN_NAMED(name, format, __VA_ARGS__);
-#define ROS_ERROR_THROTTLE_NAMED(rate, name, format, ...) ROS_ERROR_NAMED(name, format, __VA_ARGS__);
-#define ROS_FATAL_THROTTLE_NAMED(rate, name, format, ...) ROS_FATAL_NAMED(name, format, __VA_ARGS__);
+#define ROS_DEBUG_THROTTLE_NAMED(rate, name, format, ...) ROS_DEBUG_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_INFO_THROTTLE_NAMED(rate, name, format, ...) ROS_INFO_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_WARN_THROTTLE_NAMED(rate, name, format, ...) ROS_WARN_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_ERROR_THROTTLE_NAMED(rate, name, format, ...) ROS_ERROR_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_FATAL_THROTTLE_NAMED(rate, name, format, ...) ROS_FATAL_NAMED(name, format, ##__VA_ARGS__);
 
 // Delayed throttle named log macros
-#define ROS_DEBUG_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_DEBUG_NAMED(name, format, __VA_ARGS__);
-#define ROS_INFO_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_INFO_NAMED(name, format, __VA_ARGS__);
-#define ROS_WARN_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_WARN_NAMED(name, format, __VA_ARGS__);
-#define ROS_ERROR_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_ERROR_NAMED(name, format, __VA_ARGS__);
-#define ROS_FATAL_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_FATAL_NAMED(name, format, __VA_ARGS__);
+#define ROS_DEBUG_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_DEBUG_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_INFO_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_INFO_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_WARN_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_WARN_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_ERROR_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_ERROR_NAMED(name, format, ##__VA_ARGS__);
+#define ROS_FATAL_DELAYED_THROTTLE_NAMED(rate, name, format, ...) ROS_FATAL_NAMED(name, format, ##__VA_ARGS__);
   
 // Stream log macros
 #define ROS_DEBUG_STREAM(Msg) std::cerr << DEBUG_PREFIX << Msg << END_SUFFIX;
