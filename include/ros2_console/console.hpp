@@ -12,24 +12,24 @@ namespace ros2_console
 
 // Define colors
 #ifdef WIN32
-    #define COLOR_NORMAL ""
-    #define COLOR_RED ""
-    #define COLOR_GREEN ""
-    #define COLOR_YELLOW ""
+    #define ROS2_CONSOLE_COLOR_NORMAL ""
+    #define ROS2_CONSOLE_COLOR_RED ""
+    #define ROS2_CONSOLE_COLOR_GREEN ""
+    #define ROS2_CONSOLE_COLOR_YELLOW ""
 #else
-    #define COLOR_NORMAL "\033[0m"
-    #define COLOR_RED "\033[31m"
-    #define COLOR_GREEN "\033[32m"
-    #define COLOR_YELLOW "\033[33m"
+    #define ROS2_CONSOLE_COLOR_NORMAL "\033[0m"
+    #define ROS2_CONSOLE_COLOR_RED "\033[31m"
+    #define ROS2_CONSOLE_COLOR_GREEN "\033[32m"
+    #define ROS2_CONSOLE_COLOR_YELLOW "\033[33m"
 #endif
 
 // Define prefixes for each log level
-#define DEBUG_PREFIX COLOR_GREEN "[DEBUG]: "
-#define INFO_PREFIX COLOR_NORMAL "[ INFO]: "
-#define WARN_PREFIX COLOR_YELLOW "[ WARN]: "
-#define ERROR_PREFIX COLOR_RED   "[ERROR]: "
-#define FATAL_PREFIX COLOR_RED   "[FATAL]: "
-#define END_SUFFIX COLOR_NORMAL "\n"
+#define DEBUG_PREFIX ROS2_CONSOLE_COLOR_GREEN "[DEBUG]: "
+#define INFO_PREFIX ROS2_CONSOLE_COLOR_NORMAL "[ INFO]: "
+#define WARN_PREFIX ROS2_CONSOLE_COLOR_YELLOW "[ WARN]: "
+#define ERROR_PREFIX ROS2_CONSOLE_COLOR_RED   "[ERROR]: "
+#define FATAL_PREFIX ROS2_CONSOLE_COLOR_RED   "[FATAL]: "
+#define END_SUFFIX ROS2_CONSOLE_COLOR_NORMAL "\n"
 
 // Regular log macros
 #define ROS_DEBUG(format, ...) printf(DEBUG_PREFIX format END_SUFFIX, ##__VA_ARGS__);
