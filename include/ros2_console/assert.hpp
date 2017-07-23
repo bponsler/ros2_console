@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define ROS_ASSERT(expr) if (!expr) { abort(); }
+#define ROS_ASSERT(expr) if (!(expr)) { abort(); }
 #define ROS_BREAK() abort();
 
 
